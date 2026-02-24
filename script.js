@@ -165,7 +165,7 @@ function toggol (id){
 
             interviewList = interviewList.filter( item => item.salary !== companyName);
             rejectedList = rejectedList.filter( item => item.salary !== companyName);
-            calculate();
+            calculate();          
             if ( currentStatus === 'interview-btn'){
                 renderInterview ();
             }

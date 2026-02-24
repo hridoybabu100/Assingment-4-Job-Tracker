@@ -4,19 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Tracker</title>
+    <title>Jobs Tracker</title>
     <!-- Google- Fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
     <!-- Tailwind- css  -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <!-- Fonts- Awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
     <!-- Style-css  -->
     <link rel="stylesheet" href="style.css">
 
@@ -52,7 +55,7 @@
             <p id="jobsCount" class="text-[#64748B]">8 <span>jobs</span></p>
         </div>
 
-
+        <!-- Toggole Button Section  -->
         <div class="flex gap-2">
             <button onclick="toggol('all-btn')" id="all-btn"
                 class="bg-[#3B82F6] py-1 px-6 rounded-md text-white">All</button>
@@ -61,9 +64,13 @@
             <button onclick="toggol('rejected-btn')" id="rejected-btn"
                 class="bg-[#FFFFFF] py-1 px-6 rounded-md text-[#002C5C] ">Rejected</button>
         </div>
+
+        <!-- Filter Section  -->
         <section id="filter" class="hidden">
 
         </section>
+
+        <!-- No Jobs Section  -->
         <section id="jobs-available" class=" mb-4 bg-[##FFFFFF] shadow-md hidden mt-3 ">
             <div class="flex justify-center items-center border border-gray-300 py-[70px] rounded-md ">
                 <div class=" text-center">
@@ -74,6 +81,7 @@
             </div>
         </section>
 
+        <!-- All Card Section  -->
         <section id="all-cards" class="">
 
             <!-- 1st Card  -->
@@ -143,6 +151,7 @@
             </div>
 
             <!-- 3rd Card  -->
+
             <div class=" my-5 company-card">
                 <div class=" bg-[#FFFFFF] rounded-md lg:flex justify-between p-2 lg:p-6">
                     <div class="space-y-5 ">
