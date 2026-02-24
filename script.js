@@ -168,9 +168,11 @@ function toggol (id){
             calculate();          
             if ( currentStatus === 'interview-btn'){
                 renderInterview ();
+                
             }
             else if ( currentStatus === 'interview-btn'){
                 renderRejected();
+                
             }
         }  
     }

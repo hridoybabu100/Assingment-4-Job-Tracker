@@ -58,6 +58,11 @@
 
 ### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
+- getElementById holo	Single Element ja jekuno ekta id ke dhora jai.
+- getElementsByClassName holo Html Collection.
+- querySelector	CSS selector Single Element jekuno first (first only)
+- querySelectorAll	CSS selector NodeList.
+
 ### 2. How do you create and insert a new element into the DOM?
 
 ### 3. What is Event Bubbling? And how does it work?
