@@ -97,8 +97,7 @@ function toggol (id){
  const mianContainer = document.getElementById('container');
  mianContainer.addEventListener('click', function (event){
     // console.log(event.target.contains('interview-updated-btn'));
-    
-    
+  
    if ( event.target.classList.contains('interview-updated-btn')) {
      const parentNode = event.target.parentNode.parentNode ;
     // console.log(parentNode);
@@ -129,7 +128,7 @@ function toggol (id){
     
 
    }
-   if ( event.target.classList.contains('rejected-updated-btn')) {
+    else if ( event.target.classList.contains('rejected-updated-btn')) {
      const parentNode = event.target.parentNode.parentNode ;
     // console.log(parentNode);
     const companyName = parentNode.querySelector('.company-name').innerText ;
@@ -158,7 +157,48 @@ function toggol (id){
     }
     calculate();
 
-   }
+   }   
+    // else if(event.target.closest('.delete-btn')){
+
+    //     const card = event.target.closest('.job-card');
+
+    //     if(card){
+
+    //         const shopName =
+    //             card.querySelector('.mobile-shop, .Mobile-First-Corp').innerText;
+
+    //         card.remove();
+
+    //         IntervieCount = IntervieCount.filter(i=>i.mobileShop!==shopName);
+    //         RejectedCount = RejectedCount.filter(i=>i.mobileShop!==shopName);
+
+    //         calculateCount();
+
+    //         if(currentStatusCount==='Interview-filter-btn') renderInterview();
+    //         else if(currentStatusCount==='Rejected-filter-btn') renderrejected();
+    //     }
+    // } 
+    //Delete btn
+    else if ( event.target.closest('.delete-btn') ){
+        const card = event.target.closest('.company-card')
+        // console.log(card);
+        if (card){
+            const companyName = card.querySelector('.salary, .Mobile First Corp').innerText;
+            card.remove();
+
+            interviewList = interviewList.filter( item => item.salary !== companyName);
+            rejectedList = rejectedList.filter( item => item.salary !== companyName);
+            calculate();
+            if ( currentStatus === 'interview-btn'){
+                renderInterview ();
+            }
+            else if ( currentStatus === 'interview-btn'){
+                renderRejected();
+            }
+        }
+        
+        
+    }
 
  })
 
