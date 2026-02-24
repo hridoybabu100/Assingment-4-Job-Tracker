@@ -60,19 +60,32 @@
 
 - getElementById holo	Single Element ja jekuno ekta id ke dhora jai.
 - getElementsByClassName holo Html Collection.
-- querySelector	CSS selector Single Element jekuno first (first only)
-- querySelectorAll	CSS selector NodeList.
+- querySelector	CSS selectorer Single Element jekuno first (first only)
+- querySelectorAll	CSS selectorer NodeList.
 
 ### 2. How do you create and insert a new element into the DOM?
+- Element create korte hbe.
+- document.createElement() tag use html element crete korte hbe.
+- Then set Attribute or Content. elements ta dhorte hbe. inner.text ba class or id set korte hbe.
+- Parent Elements ke selected jkorte hbe.
+- Dom a add korte hbe. 
+- AppendChild() use korte hbe.
 
 ### 3. What is Event Bubbling? And how does it work?
+- Event Bubling holo ekti DOM event handaling er prokriya ja kuno event e first target element e ghote thake.
+- Pore eita Parent Elements er dike upore chole jai. eitake abr stop o kora jai.
 
 ### 4. What is Event Delegation in JavaScript? Why is it useful?
+- Event Delegation holo JavaScript a ekti special Technic Ja Ekti Parent Element a Event Listener set kora jai & tar Protita Child elements er event o sei listener die handle kora jai.
+
+### Why is it usefull ??
+- Eita Code maintain kora Easy
+- Eira die Dynamice Elements Handle kora easy.pore dom er new child add holew alada listener laganur kuno dorkr porenah.
 
 ### 5. What is the difference between preventDefault() and stopPropagation() methods?
-
----
-
+- PreventDefailt() and stopPropragation () ei duitai JavaScript er Object Method. Kintu Ader kaz alada.
+- PreventDefault()	Event default browser behavior off kore dei.
+- StopPropagation()	Event parent elements er dike bubble ba capture hote atkai.
 
 **Technology Stack:**
 - HTML
