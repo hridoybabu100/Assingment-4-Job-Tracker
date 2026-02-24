@@ -89,7 +89,7 @@ function toggol (id){
         renderSection.classList.remove('hidden')
         renderRejected ();
     }
-    // calculate ();  
+    calculate();  
 }
 // Main section Delegation.Sob bacca Gula ke dhorrar jonne i menn all elements ke dhorar jonne delegation korte hbe.
  const mianContainer = document.getElementById('container');
