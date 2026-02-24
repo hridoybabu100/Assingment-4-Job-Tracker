@@ -9,21 +9,49 @@ const totalCount = document.getElementById('total-count');
 const totalInterviewCount = document.getElementById('total-interview-count');
 const totalRejectedCount = document.getElementById('total-rejected-count');
 
+//No jobs
+const noJob = document.getElementById('jobs-available');
+// console.log(noJob);
+//Abailable Jobs
+const abailableJobs = document.getElementById('jobsCount')
+// console.log(abailableJobs);
+
+
 //Total Cards
 const allCards = document.getElementById('all-cards');
-// console.log(allCards.children);
+// console.log(allCards.children.length);
 
 //Calculate Function
 function calculate (){
     totalCount.innerText = allCards.children.length ;
     totalInterviewCount.innerText = interviewList.length ;
     totalRejectedCount.innerText = rejectedList.length ; 
+    
+    //Total Jobs Er Lenggth
+    const totalJobs = allCards.children.length;
+    // console.log(totalJobs);
+    
+    if ( currentStatus === 'interview-btn' ){
+        abailableJobs.innerText = `${interviewList.length} of ${totalJobs}`
+    }
+    else if ( currentStatus === 'rejected-btn' ){
+        abailableJobs.innerText = `${rejectedList.length} of ${totalJobs}`
+    }
+    else{
+        abailableJobs.innerText = `${totalJobs} jobs`
+    }
 }
+
 calculate();
 //toggole Button
 const allButton = document.getElementById('all-btn');
 const interviewButton = document.getElementById('interview-btn');
 const rejectedButton = document.getElementById('rejected-btn');
+
+//Total JobCount
+const totalJobs = allCards.children.length;
+// console.log('Total Jobs', totalCount);
+
 //Toggol Function
 // console.log(allButton, interviewButton, rejectedButton);
 function toggol (id){
@@ -55,12 +83,14 @@ function toggol (id){
     else if ( id == 'all-btn'){
         allCards.classList.remove('hidden');
         renderSection.classList.add('hidden')
+        noJob.classList.add('hidden')
     }
     else if ( id == 'rejected-btn'){
         allCards.classList.add('hidden')
         renderSection.classList.remove('hidden')
         renderRejected ();
     }
+    // calculate ();
     
 }
 // Main section Delegation.
@@ -138,6 +168,13 @@ function toggol (id){
 //  console.log(renderSection);
 function renderInterview (){
     renderSection.innerHTML = " "
+    if ( interviewList.length === 0 ){
+        noJob.classList.remove('hidden');
+       
+    }
+    else{
+        noJob.classList.add('hidden');
+    }
 
     for ( let interview of interviewList){
         const div = document.createElement('div');
@@ -176,6 +213,14 @@ function renderInterview (){
 }
 function renderRejected (){
     renderSection.innerHTML = " "
+    if ( rejectedList.length === 0 ){
+        noJob.classList.remove('hidden');
+       
+    }
+    else {
+        noJob.classList.add('hidden')
+      
+    }
 
     for ( let rejected of rejectedList){
         const div = document.createElement('div');

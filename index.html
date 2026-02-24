@@ -49,20 +49,26 @@
     <main id="container" class=" lg:w-[70%] w-[95%] mx-auto mt-6">
         <div class="flex justify-between items-center">
             <h1 class="py-6 text-[#002C5C] font-bold">Available Jobs</h1>
-            <p class="text-[#64748B]">8 jobs</p>
+            <p id="jobsCount" class="text-[#64748B]">8 <span>jobs</span></p>
         </div>
 
 
         <div class="flex gap-2">
-            <button onclick="toggol('all-btn')" id="all-btn"
-                class="bg-[#3B82F6] py-1 px-6 rounded-md text-white">All</button>
-            <button onclick="toggol('interview-btn')" id="interview-btn"
-                class="bg-[#FFFFFF] py-1 px-6 rounded-md text-[#002C5C] ">Interview</button>
-            <button onclick="toggol('rejected-btn')" id="rejected-btn"
-                class="bg-[#FFFFFF] py-1 px-6 rounded-md text-[#002C5C] ">Rejected</button>
+            <button onclick="toggol('all-btn')" id="all-btn" class="bg-[#3B82F6] py-1 px-6 rounded-md text-white">All</button>
+            <button onclick="toggol('interview-btn')" id="interview-btn" class="bg-[#FFFFFF] py-1 px-6 rounded-md text-[#002C5C] ">Interview</button>
+            <button onclick="toggol('rejected-btn')" id="rejected-btn" class="bg-[#FFFFFF] py-1 px-6 rounded-md text-[#002C5C] ">Rejected</button>
         </div>
         <section id="filter" class="hidden">
 
+        </section>
+        <section id="jobs-available" class=" mb-4 bg-[##FFFFFF] shadow-md hidden mt-3 ">
+            <div class="flex justify-center items-center border border-gray-300 py-[70px] rounded-md ">
+                <div class=" text-center">
+                    <img src="./jobs.png" alt="" class="mx-auto block">
+                    <h3 class="text-[#002C5C] font-semibold text-[24px]">No jobs available</h3>
+                    <p class="text-[#64748B]">Check back soon for new job opportunities</p>
+                </div>
+            </div>
         </section>
 
         <section id="all-cards" class="">
@@ -80,14 +86,13 @@
                             <button class="text-[#002C5C] font-medium py-1 px-6 bg-[#EEF4FF] rounded-md status">Not
                                 Applied</button>
                         </div>
-                        <p class="description">Build cross-platform mobile applications using React Native. Work on
-                            products used by
+                        <p class="description">Build cross-platform mobile applications using React Native. Work on products used by
                             millions of
                             users worldwide.</p>
                         <div>
-                            <button
+                            <button 
                                 class="border border-[#10B981] rounded-md text-[#10B981] py-1 px-6 font-semibold interview-updated-btn">Interview</button>
-                            <button
+                            <button 
                                 class="border border-[#EF4444] rounded-md text-[#EF4444] py-1 px-6 font-semibold rejected-updated-btn">Rejected</button>
                         </div>
                     </div>
@@ -115,8 +120,7 @@
                             <button class="text-[#002C5C] font-medium py-1 px-6 bg-[#EEF4FF] rounded-md status">Not
                                 Applied</button>
                         </div>
-                        <p class="description">Create stunning web experiences for high-profile clients. Must have
-                            portfolio and experience
+                        <p class="description">Create stunning web experiences for high-profile clients. Must have portfolio and experience
                             with modern web design trends.</p>
                         <div>
                             <button
@@ -148,8 +152,7 @@
                             <button class="text-[#002C5C] font-medium py-1 px-6 bg-[#EEF4FF] rounded-md status">Not
                                 Applied</button>
                         </div>
-                        <p class="description">Transform complex data into compelling visualizations. Required skills:
-                            D3.js, React, and
+                        <p class="description">Transform complex data into compelling visualizations. Required skills: D3.js, React, and
                             strong analytical thinking.
                         </p>
                         <div>
@@ -183,8 +186,7 @@
                             <button class="text-[#002C5C] font-medium py-1 px-6 bg-[#EEF4FF] rounded-md status">Not
                                 Applied</button>
                         </div>
-                        <p class="description">Design and maintain scalable backend systems using Python and AWS. Work
-                            with modern DevOps
+                        <p class="description">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps
                             practices and cloud infrastructure.</p>
                         <div>
                             <button
@@ -217,8 +219,7 @@
                             <button class="text-[#002C5C] font-medium py-1 px-6 bg-[#EEF4FF] rounded-md status">Not
                                 Applied</button>
                         </div>
-                        <p class="description">Create beautiful and functional user interfaces for our suite of
-                            products. Strong design
+                        <p class="description">Create beautiful and functional user interfaces for our suite of products. Strong design
                             skills and frontend development expertise required.</p>
                         <div>
                             <button
@@ -251,8 +252,7 @@
                             <button class="text-[#002C5C] font-medium py-1 px-6 bg-[#EEF4FF] rounded-md status">Not
                                 Applied</button>
                         </div>
-                        <p class="description">Build enterprise applications with JavaScript and modern frameworks. We
-                            offer competitive
+                        <p class="description">Build enterprise applications with JavaScript and modern frameworks. We offer competitive
                             compensation, health insurance, and professional development opportunities.</p>
                         <div>
                             <button
@@ -285,8 +285,7 @@
                             <button class="text-[#002C5C] font-medium py-1 px-6 bg-[#EEF4FF] rounded-md status">Not
                                 Applied</button>
                         </div>
-                        <p class="description">Join our fast-growing startup and work on our core platform. Experience
-                            with Node.js and
+                        <p class="description">Join our fast-growing startup and work on our core platform. Experience with Node.js and
                             React required. Great benefits and equity package included.</p>
                         <div>
                             <button
@@ -318,8 +317,7 @@
                             <button class="text-[#002C5C] font-medium py-1 px-6 bg-[#EEF4FF] rounded-md status">Not
                                 Applied</button>
                         </div>
-                        <p class="description">We are looking for an experienced Frontend Developer to build scalable
-                            web applications using
+                        <p class="description">We are looking for an experienced Frontend Developer to build scalable web applications using
                             React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                         <div>
                             <button
