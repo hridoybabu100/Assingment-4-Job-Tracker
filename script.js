@@ -1,5 +1,5 @@
-// console.log('connneted');
-// Array
+// console.log(' JavaScripts connneted');
+//Faka Array
 let interviewList = [];
 let rejectedList = [];
 let currentStatus = 'all';
@@ -16,7 +16,6 @@ const noJob = document.getElementById('jobs-available');
 const abailableJobs = document.getElementById('jobsCount')
 // console.log(abailableJobs);
 
-
 //Total Cards
 const allCards = document.getElementById('all-cards');
 // console.log(allCards.children.length);
@@ -30,7 +29,7 @@ function calculate (){
     //Total Jobs Er Lenggth
     const totalJobs = allCards.children.length;
     // console.log(totalJobs);
-    
+    //Jobs Pages updated
     if ( currentStatus === 'interview-btn' ){
         abailableJobs.innerText = `${interviewList.length} of ${totalJobs}`
     }
@@ -41,19 +40,19 @@ function calculate (){
         abailableJobs.innerText = `${totalJobs} jobs`
     }
 }
-
 calculate();
-//toggole Button
+
+//toggole Clicked Button
 const allButton = document.getElementById('all-btn');
 const interviewButton = document.getElementById('interview-btn');
 const rejectedButton = document.getElementById('rejected-btn');
+// console.log(allButton, interviewButton, rejectedButton);
 
 //Total JobCount
 const totalJobs = allCards.children.length;
 // console.log('Total Jobs', totalCount);
 
 //Toggol Function
-// console.log(allButton, interviewButton, rejectedButton);
 function toggol (id){
     //add all bg & text
     allButton.classList.add('bg-gray-300', 'text-black')
@@ -90,10 +89,9 @@ function toggol (id){
         renderSection.classList.remove('hidden')
         renderRejected ();
     }
-    // calculate ();
-    
+    // calculate ();  
 }
-// Main section Delegation.
+// Main section Delegation.Sob bacca Gula ke dhorrar jonne i menn all elements ke dhorar jonne delegation korte hbe.
  const mianContainer = document.getElementById('container');
  mianContainer.addEventListener('click', function (event){
     // console.log(event.target.contains('interview-updated-btn'));
@@ -118,16 +116,15 @@ function toggol (id){
     if ( !nameExit ){
         interviewList.push(cardInfo);
     }
-    //remove the Tracker from the rejected list
-    //  strugglingList = strugglingList.filter(item => item.plantName != cardInfo.plantName)
+    //Interview list theke Rejected list gula ke kick mere dilam hahha
     rejectedList = rejectedList.filter( item => item.companyName != cardInfo.companyName );
     if ( currentStatus == 'rejected-btn' ){
         renderRejected ()
     }
     calculate();
     
-
    }
+
     else if ( event.target.classList.contains('rejected-updated-btn')) {
      const parentNode = event.target.parentNode.parentNode ;
     // console.log(parentNode);
@@ -148,8 +145,7 @@ function toggol (id){
     if ( !nameExit ){
         rejectedList.push(cardInfo);
     }
-    //remove the Tracker from the rejected list
-    //  strugglingList = strugglingList.filter(item => item.plantName != cardInfo.plantName)
+    //Rejected List theke intervciew list e udaw kore dilam hahahahaha
     interviewList = interviewList.filter( item => item.companyName != cardInfo.companyName );
     if ( currentStatus == 'rejected-btn' ){
         renderInterview ();
@@ -158,27 +154,8 @@ function toggol (id){
     calculate();
 
    }   
-    // else if(event.target.closest('.delete-btn')){
-
-    //     const card = event.target.closest('.job-card');
-
-    //     if(card){
-
-    //         const shopName =
-    //             card.querySelector('.mobile-shop, .Mobile-First-Corp').innerText;
-
-    //         card.remove();
-
-    //         IntervieCount = IntervieCount.filter(i=>i.mobileShop!==shopName);
-    //         RejectedCount = RejectedCount.filter(i=>i.mobileShop!==shopName);
-
-    //         calculateCount();
-
-    //         if(currentStatusCount==='Interview-filter-btn') renderInterview();
-    //         else if(currentStatusCount==='Rejected-filter-btn') renderrejected();
-    //     }
-    // } 
-    //Delete btn
+ 
+    //Delete btn. Eita ami sob theke beshi pera khaichi.
     else if ( event.target.closest('.delete-btn') ){
         const card = event.target.closest('.company-card')
         // console.log(card);
@@ -195,18 +172,15 @@ function toggol (id){
             else if ( currentStatus === 'interview-btn'){
                 renderRejected();
             }
-        }
-        
-        
+        }  
     }
-
  })
 
 
- //Render section
- const renderSection = document.getElementById('filter');
-//  console.log(renderSection);
-function renderInterview (){
+    //Render section. 
+    const renderSection = document.getElementById('filter');
+    //  console.log(renderSection);
+    function renderInterview (){
     renderSection.innerHTML = " "
     if ( interviewList.length === 0 ){
         noJob.classList.remove('hidden');
@@ -218,7 +192,6 @@ function renderInterview (){
 
     for ( let interview of interviewList){
         const div = document.createElement('div');
-        // div.className = 'bg-[#FFFFFF] rounded-md lg:flex justify-between p-2 lg:p-6'
         div.innerHTML = `
           <div class=" my-5 ">
                 <div class=" bg-[#FFFFFF] rounded-md lg:flex justify-between p-2 lg:p-6">
@@ -264,7 +237,6 @@ function renderRejected (){
 
     for ( let rejected of rejectedList){
         const div = document.createElement('div');
-        // div.className = 'bg-[#FFFFFF] rounded-md lg:flex justify-between p-2 lg:p-6'
         div.innerHTML = `
           <div class=" my-5 ">
                 <div class=" bg-[#FFFFFF] rounded-md lg:flex justify-between p-2 lg:p-6">
