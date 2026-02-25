@@ -116,11 +116,15 @@ function toggol (id){
     if ( !nameExit ){
         interviewList.push(cardInfo);
     }
-    //Interview list theke Rejected list gula ke kick mere dilam hahha
-    rejectedList = rejectedList.filter( item => item.companyName != cardInfo.companyName );
+    //Interview list theke Rejected list remove
+    rejectedList = rejectedList.filter(item => item.companyName != cardInfo.companyName );
+    // console.log(rejectedList);
+    
+
     if ( currentStatus == 'rejected-btn' ){
         renderRejected ()
     }
+    
     calculate();
     
    }
@@ -145,10 +149,11 @@ function toggol (id){
     if ( !nameExit ){
         rejectedList.push(cardInfo);
     }
-    //Rejected List theke intervciew list e udaw kore dilam hahahahaha
-    interviewList = interviewList.filter( item => item.companyName != cardInfo.companyName );
-    if ( currentStatus == 'rejected-btn' ){
-        renderInterview ();
+    //Rejected List theke intervciew list remove
+    interviewList = interviewList.filter(item => item.companyName != cardInfo.companyName );
+    
+    if ( currentStatus == 'interview-btn' ){
+        renderInterview();
         
     }
     calculate();
@@ -195,7 +200,7 @@ function toggol (id){
     for ( let interview of interviewList){
         const div = document.createElement('div');
         div.innerHTML = `
-          <div class=" my-5 ">
+          <div class="my-5 company-card">
                 <div class=" bg-[#FFFFFF] rounded-md lg:flex justify-between p-2 lg:p-6">
                     <div class="space-y-5 ">
                         <div>
@@ -210,13 +215,13 @@ function toggol (id){
                             millions of
                             users worldwide.</p>
                         <div>
-                            <button id="interview-updated-btn"
-                                class="border border-[#10B981] rounded-md text-[#10B981] py-1 px-6 font-semibold">Interview</button>
-                            <button id="rejected-updated-btn"
-                                class="border border-[#EF4444] rounded-md text-[#EF4444] py-1 px-6 font-semibold">Rejected</button>
+                            <button 
+                                class="border interview-updated-btn border-[#10B981] rounded-md text-[#10B981] py-1 px-6 font-semibold">Interview</button>
+                            <button 
+                                class="border rejected-updated-btn border-[#EF4444] rounded-md text-[#EF4444] py-1 px-6 font-semibold">Rejected</button>
                         </div>
                     </div>
-                    <div class="w-8 h-8 rounded-[50%] border flex justify-center items-center border-[#EF4444] mt-6 ">
+                    <div class="w-8 delete-btn h-8 rounded-[50%] border flex justify-center items-center border-[#EF4444] mt-6 ">
                         <span><i class="fa-solid fa-trash-can w-4 text-[#64748B]"></i></span>
                     </div>
                 </div>
@@ -240,7 +245,7 @@ function renderRejected (){
     for ( let rejected of rejectedList){
         const div = document.createElement('div');
         div.innerHTML = `
-          <div class=" my-5 ">
+          <div class="my-5 company-card">
                 <div class=" bg-[#FFFFFF] rounded-md lg:flex justify-between p-2 lg:p-6">
                     <div class="space-y-5 ">
                         <div>
@@ -255,13 +260,13 @@ function renderRejected (){
                             millions of
                             users worldwide.</p>
                         <div>
-                            <button id="interview-updated-btn"
-                                class="border border-[#10B981] rounded-md text-[#10B981] py-1 px-6 font-semibold">Interview</button>
-                            <button id="rejected-updated-btn"
-                                class="border border-[#EF4444] rounded-md text-[#EF4444] py-1 px-6 font-semibold">Rejected</button>
+                            <button 
+                                class="border interview-updated-btn border-[#10B981] rounded-md text-[#10B981] py-1 px-6 font-semibold">Interview</button>
+                            <button 
+                                class="border rejected-updated-btn border-[#EF4444] rounded-md text-[#EF4444] py-1 px-6 font-semibold">Rejected</button>
                         </div>
                     </div>
-                    <div class="w-8 h-8 rounded-[50%] border flex justify-center items-center border-[#EF4444] mt-6 ">
+                    <div class="w-8 delete-btn h-8 rounded-[50%] border flex justify-center items-center border-[#EF4444] mt-6 ">
                         <span><i class="fa-solid fa-trash-can w-4 text-[#64748B]"></i></span>
                     </div>
                 </div>
