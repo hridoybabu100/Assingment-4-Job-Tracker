@@ -200,7 +200,7 @@ function toggol (id){
     for ( let interview of interviewList){
         const div = document.createElement('div');
         div.innerHTML = `
-          <div class="my-5 company-card">
+          <div class="my-5 company-card ">
                 <div class=" bg-[#FFFFFF] rounded-md lg:flex justify-between p-2 lg:p-6">
                     <div class="space-y-5 ">
                         <div>
