@@ -161,26 +161,61 @@ function toggol (id){
    }   
  
     //Delete btn. Eita ami sob theke beshi pera khaichi.
-    else if ( event.target.closest('.delete-btn') ){
-        const card = event.target.closest('.company-card')
-        // console.log(card);
-        if (card){
-            const companyName = card.querySelector('.salary, .Mobile First Corp').innerText;
-            card.remove();
+    // else if ( event.target.closest('.delete-btn') ){
+    //     const card = event.target.closest('.company-card')
+    //     // console.log(card);
 
-            interviewList = interviewList.filter( item => item.salary !== companyName);
-            rejectedList = rejectedList.filter( item => item.salary !== companyName);
-            calculate();          
-            if ( currentStatus === 'interview-btn'){
-                renderInterview ();
-                
-            }
-            else if ( currentStatus === 'interview-btn'){
-                renderRejected();
-                
-            }
-        }  
+    //     if (card){
+    //         console.log(card);
+            
+    //          const companyName = card.querySelector('.company-name').innerText ;
+    //         card.remove();
+
+    //        const interviewLists = interviewList.filter( item => item.companyName != companyName);
+    //         rejectedList = rejectedList.filter( item => item.companyName != companyName);
+    //         calculate();  
+    //         console.log(currentStatus);
+    //         console.log(interviewLists);
+    //         console.log(rejectedList);
+    //         console.log(companyName);
+            
+            
+            
+                    
+    //         if ( currentStatus === 'interview-btn' ){
+    //             renderInterview ();     
+    //         }
+    //         else if ( currentStatus === 'interview-btn' ){
+    //             renderRejected();               
+    //         }
+    //     }  
+    // }
+    else if (event.target.closest('.delete-btn')) {
+
+    const card = event.target.closest('.company-card');
+    if (!card) return;
+
+    const companyName = card.querySelector('.company-name').innerText;
+
+    card.remove();
+
+    interviewList = interviewList.filter(
+        item => item.companyName !== companyName
+    );
+
+    rejectedList = rejectedList.filter(
+        item => item.companyName !== companyName
+    );
+
+    calculate();
+
+    if (currentStatus === 'interview-btn') {
+        renderInterview();
     }
+    else if (currentStatus === 'reject-btn') {
+        renderRejected();
+    }
+}
  })
 
 
@@ -200,7 +235,7 @@ function toggol (id){
     for ( let interview of interviewList){
         const div = document.createElement('div');
         div.innerHTML = `
-          <div class="my-5 company-card ">
+          <div class="my-5 company-card">
                 <div class=" bg-[#FFFFFF] rounded-md lg:flex justify-between p-2 lg:p-6">
                     <div class="space-y-5 ">
                         <div>
